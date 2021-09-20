@@ -1,0 +1,103 @@
+#include<windows.h>
+#include <GL/glut.h>
+void display()
+{
+ 	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(0.41, 0.33, 0.56);
+	//1-Triangle
+	glBegin(GL_TRIANGLES);
+	glVertex2f(-0.8,0.8);
+	glVertex2f(-0.7,0.8);
+	glVertex2f(-0.75,0.7);
+	glEnd();
+	//2-Square
+	glBegin(GL_QUADS);
+	glVertex2f(-0.6,0.8);
+	glVertex2f(-0.6,0.7);
+	glVertex2f(-0.5,0.7);
+	glVertex2f(-0.5,0.8);
+	glEnd();
+	//3-Polygon
+	glBegin(GL_POLYGON);
+	glVertex2f(-0.4,0.8);
+	glVertex2f(-0.4,0.7);
+	glVertex2f(-0.2,0.7);
+	glVertex2f(-0.2,0.8);
+	glEnd();
+	//4-Points
+	glBegin(GL_POINTS);
+	glVertex2f(0,0.8);
+	glVertex2f(0.1,0.7);
+	glVertex2f(0.1,0.7);
+	glVertex2f(0,0.8);
+	glEnd();
+	//5-Line
+	glBegin(GL_LINES);
+	glVertex2f(0.2,0.8);
+	glVertex2f(0.2,0.7);
+	glVertex2f(0.1,0.8);
+	glVertex2f(0.1,0.7);
+	glEnd();
+	//6-LineStrip
+	glBegin(GL_LINE_STRIP);
+	glVertex2f(0.3,0.8);
+	glVertex2f(0.4,0.8);
+	glVertex2f(0.45,0.75);
+	glVertex2f(0.4,0.7);
+	glVertex2f(0.3,0.7);
+	glEnd();
+	//7-LineLoop
+	glBegin(GL_LINE_LOOP);
+	glVertex2f(0.5,0.8);
+	glVertex2f(0.6,0.8);
+	glVertex2f(0.65,0.75);
+	glVertex2f(0.6,0.7);
+	glVertex2f(0.5,0.7);
+	glEnd();
+	//8-TriangleFan
+	glBegin(GL_TRIANGLE_FAN);
+	glVertex2f(0.7,-0.3);
+	glVertex2f(0.65,0);
+	glVertex2f(0.5,-0.03);
+	glVertex2f(0.4,-0.13);
+	glVertex2f(0.25,-0.2);
+	glVertex2f(0.1,-0.25);
+	glEnd();
+	//9-QuadStrip
+	glBegin(GL_QUAD_STRIP);
+	glVertex2f(-0.35,-0.6);
+	glVertex2f(-0.35,-0.45);
+	glVertex2f(-0.4,-0.6);
+	glVertex2f(-0.4,-0.5);
+	glVertex2f(-0.55,-0.6);
+	glVertex2f(-0.55,-0.5);
+	glVertex2f(-0.65,-0.6);
+	glVertex2f(-0.65,-0.4);
+	glVertex2f(-0.7,-0.43);
+	glVertex2f(-0.7,-0.47);
+	glEnd();
+	//10-TriangleStrip
+	glBegin(GL_TRIANGLE_STRIP);
+	glVertex2f(-0.6,0.4);
+	glVertex2f(-0.6,0.2);
+	glVertex2f(-0.3,0.3);
+	glVertex2f(-0.2,0.3);
+   	glVertex2f(0.0,0.1);
+	glEnd();
+	glFlush();
+
+
+}
+
+int main(int argc,char** argv)
+{
+	glutInit(&argc,argv);
+	glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
+	glutInitWindowSize(500,500);
+	glutInitWindowPosition(170,170);
+	glutCreateWindow("Exp1 - Primitives of OpenGL");
+	glClearColor(0,0,0,0);
+	glutDisplayFunc(display);
+	glutMainLoop();
+	return 0;
+}
